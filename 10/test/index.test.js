@@ -70,6 +70,32 @@ describe('parseUrl', () => {
 			protocol: "https:"
 		}
 	  ],
+	  [
+		'https://🥵.z/?', 
+		{
+			hash: "",
+			host: "xn--os9h.z",
+			hostname: "xn--os9h.z",
+			href: "https://xn--os9h.z/?",
+			origin: "https://xn--os9h.z",
+			pathname: "/",
+			port: "",
+			protocol: "https:"
+		}
+	  ],
+	  [
+		'http://測試.cn/?a=1&b[]=a&b[]=b', 
+		{
+			hash: "",
+			host: "xn--g6w251d.cn",
+			hostname: "xn--g6w251d.cn",
+			href: "http://xn--g6w251d.cn/?a=1&b[]=a&b[]=b",
+			origin: "http://xn--g6w251d.cn",
+			pathname: "/",
+			port: "",
+			protocol: "http:"
+		}
+	  ],
      
     ].forEach(([url, result]) => {
       it(`${url}`, () => {
