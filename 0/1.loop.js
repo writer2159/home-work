@@ -12,14 +12,17 @@ setTimeout(() => {
         resolve('3');
     });
 
+
     promise
         .then((value) => {
 
             console.log(value);
 
-            setTimeout(() => {
+            setTimeout(async () => {
 
                 console.log('4');
+
+                await sleep(0.01);
 
                 clearInterval(intervalId);
 
@@ -29,3 +32,10 @@ setTimeout(() => {
     console.log('5');
 
 }, 10);
+
+
+function sleep(_second) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, _second * 1000);
+    });
+}
