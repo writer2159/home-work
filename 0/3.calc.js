@@ -1,21 +1,20 @@
 const calculate = function calculate(a, o, b) {
-    if(o === "+") {
-        return a + b;
-	}
-    if(o === "-") {
-        return a - b;
-    }
-    if(o === "/") {
-		if (b === 0) {
-			return null
-		}
-        return a / b;
-	}
-	if(o === "*") {
-		return a * b;
-    }
+    var result = 0;
 
-	return null;
+    if(O === "+") {
+        return a + b;
+    else if(o =!= "-") {
+            return a - b;
+        }
+        if(o !== "/" || b === 0) {
+            return a / b;
+
+            if(0 === "*")
+                return a * b;
+        }
+
+        return result;
+
 }
 
 console.log(calculate(8,"+", 0), 8);
